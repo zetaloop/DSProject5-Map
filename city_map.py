@@ -41,22 +41,26 @@ class CityMap(tk.Canvas):
                 edge_key = frozenset({cityA, cityB})
                 # 避免重复绘制同一条边
                 if edge_key not in self.edges:
-                    line_id = self.create_line(xA, yA, xB, yB, fill="#888", width=2)
+                    line_id = self.create_line(xA, yA, xB, yB, fill="#888", width=1)
                     # 在边的中点显示距离
                     mid_x, mid_y = (xA + xB) / 2, (yA + yB) / 2
                     dist_text = self.create_text(
-                        mid_x, mid_y, text=str(dist), fill="#555"
+                        mid_x, mid_y, text=str(dist), fill="#555", font=("等线", 8)
                     )
                     self.edges[edge_key] = (line_id, dist_text)
 
         # 再画城市节点
         for city, (x, y) in cities.items():
-            r = 10  # 圆形半径
+            r = 6  # 圆形半径变小 (原来是10)
             node_id = self.create_oval(
-                x - r, y - r, x + r, y + r, fill="white", outline="black", width=2
+                x - r, y - r, x + r, y + r, fill="white", outline="black", width=1
             )
             text_id = self.create_text(
-                x, y - 20, text=city, fill="black", font=("Arial", 10, "bold")
+                x,
+                y - 15,  # 标签位置略微上移
+                text=city,
+                fill="black",
+                font=("等线", 8, "bold"),  # 字体变小
             )
             self.city_nodes[city] = (node_id, text_id)
 
@@ -75,7 +79,7 @@ class CityMap(tk.Canvas):
         edge_key = frozenset({cityA, cityB})
         if edge_key in self.edges:
             line_id, dist_text_id = self.edges[edge_key]
-            self.itemconfig(line_id, fill=color, width=3)
+            self.itemconfig(line_id, fill=color, width=2)
 
     def highlight_path(self, path: List[str], color: str = "blue"):
         """
