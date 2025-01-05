@@ -1,5 +1,3 @@
-# city_map.py
-
 import tkinter as tk
 from typing import Dict, Tuple, List
 

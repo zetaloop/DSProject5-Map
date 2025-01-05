@@ -59,7 +59,7 @@
 
 2. 运行程序：
    ```bash
-   python run.py
+   python main.py
    ```
 
 ## 使用说明
@@ -79,7 +79,7 @@
 
 ## 项目结构
 
-- `run.py`：程序入口
+- `main.py`：程序入口
 - `main_window.py`：主窗口界面
 - `city_map.py`：地图绘制实现
 - `city_graph.py`：城市数据和算法

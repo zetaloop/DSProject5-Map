@@ -1,5 +1,3 @@
-# main_window.py
-
 import tkinter as tk
 import sv_ttk
 import darkdetect

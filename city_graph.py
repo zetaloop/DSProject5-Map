@@ -1,5 +1,3 @@
-# city_graph.py
-
 from typing import Dict, List, Tuple
 import heapq
 
