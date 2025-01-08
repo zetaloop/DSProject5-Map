@@ -1,4 +1,6 @@
-# 铁路路径规划系统
+# 铁路路径规划系统（课程作业）
+
+<img width="600" alt="Snipaste_2025-01-08_11-09-04" src="https://github.com/user-attachments/assets/04cd4db3-16cb-447b-8ede-34b2d2fbad41" />
 
 这是一个使用 Python 开发的铁路路径规划可视化系统，基于 Dijkstra 算法实现最短路径查找。系统通过直观的图形界面展示中国主要城市间的铁路连接，并可动态展示路径查找过程。
 
